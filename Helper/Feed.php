@@ -373,8 +373,7 @@ class Feed extends AbstractHelper
         $summary['products_total'] = $processed;
         $summary['products_limit'] = $limit;
         $summary['processing_time'] = $this->getTimeUsage($timeStart);
-        $summary['date_created'] = $this->timezone->date($this->datetime->date())
-            ->format(\Magento\Framework\Stdlib\DateTime::DATETIME_PHP_FORMAT);
+        $summary['date_created'] = $this->timezone->formatDateTime(null, 1);
         return $summary;
     }
 
